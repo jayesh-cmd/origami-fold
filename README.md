@@ -6,7 +6,7 @@ Control a crumpling paper animation in real-time using your hand. Open palm = un
 
 ## Step 1 — Generate Your Paper Fold Photo (ChatGPT)
 
-Use **ChatGPT image generation** (or any compatible AI image tool) with the prompt below to create your subject photo in a folded-paper style.
+Use **ChatGPT image generation** with the prompt below to create your subject photo in a folded-paper style.
 
 **Prompt:**
 
@@ -14,11 +14,23 @@ Use **ChatGPT image generation** (or any compatible AI image tool) with the prom
 -soft distortions where folds bend facial features - slight misalignment between folded sections. composition: - head and body visible - cropped bust - slightly angled (3/4 view) to show depth of folds. details: - clear crease lines across eyes, nose, cheeks, shirt, arms- slight warping of image along folds - subtle paper texture and imperfections. background: - deep black studio background, clean and minimal. lighting: - studio lighting, directional to highlight folds and creases - soft highlights on paper edges, defined shadows. texture: - paper surface with visible fold marks - slight grain. color treatment: - original skin tones preserved but slightly muted. camera: - sharp focus, shallow depth of field. mood: - artistic, sculptural, experimental, editorial. ultra high resolution, no watermark
 ```
 
-Save the generated image — you'll use it in Step 2.
+Save the generated image — you'll use it in Step 3.
 
 ---
 
-## Step 2 — Generate the Crumpling Video (Kling AI)
+## Step 2 — Generate the Crumpled Paper Ball Image (ChatGPT)
+
+Use **ChatGPT image generation** with the prompt below to create the fully crumpled end-state image.
+
+**Prompt:**
+
+```
+**Create a single tightly crumpled ball of real physical paper, with absolutely no person, face, portrait, photograph, image, text, logo, or printed content anywhere on the paper.** Make the paper look genuinely crushed by hand into a compact irregular ball, not folded into origami. Include many random sharp creases, deep wrinkles, overlapping crushed layers, uneven pointed folds, compressed sections, slightly torn/stressed edges, and realistic paper fibers. Use plain blank paper with natural off-white, beige, gray, and charcoal tones caused only by dramatic lighting and shadows. Place the crumpled paper ball on a dark matte surface against a pure black studio background. Strong cinematic side lighting creates bright highlights along the folds and deep realistic shadows inside the creases. Photorealistic, tactile, high-detail macro studio photography, realistic physical paper deformation, natural contact shadow, minimal composition. **The paper must be completely blank and must not contain any recognizable human features or printed imagery.**
+```
+
+---
+
+## Step 3 — Generate the Crumpling Video (Kling AI)
 
 Go to **[Kling AI](https://klingai.com)**, upload the image from Step 1, and use the prompt below to animate it.
 
@@ -31,8 +43,8 @@ Animate this folded paper photo compressing further: existing creases fold inwar
 Download the generated `.mp4` video.
 
 ---
-
-## Step 3 — Run the Controller
+## Coding Part ---
+## Step 4 — Run the Controller
 
 ### Prerequisites
 
@@ -45,7 +57,7 @@ pip install opencv-python mediapipe numpy sounddevice scipy
 ### Setup
 
 1. Place your downloaded video in the same folder as `paper_fold_controller.py`.
-2. Open `paper_fold_controller.py` and update `VIDEO_PATH` to your video filename:
+2. Open `paper_fold_controller.py` and update `VIDEO_PATH` in the code:
 
 ```python
 VIDEO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "YOUR_VIDEO.MP4")
